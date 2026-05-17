@@ -2,8 +2,7 @@ export type ProjectScreenshot = {
   title: string;
   caption: string;
   alt: string;
-  accent: string;
-  pattern: "dashboard" | "workflow" | "insights";
+  image: string;
 };
 
 export type Project = {
@@ -46,11 +45,10 @@ export const projects: Project[] = [
     screenshots: [
       {
         title: "Operations overview",
-        caption: "A high-signal executive view for triage load, capacity, and service health.",
+        caption: "A high-signal executive view...",
         alt: "PulseIQ operations dashboard overview mock screenshot",
-        accent: "from-cyan-200 via-sky-100 to-white dark:from-cyan-500/20 dark:via-sky-500/10 dark:to-transparent",
-        pattern: "dashboard",
-      },
+        image: "/projects/pulse-iq.png",
+      }   
       {
         title: "Care queue",
         caption: "Prioritized worklists with risk tags and next-best actions.",
