@@ -60,7 +60,7 @@ export const projects: Project[] = [
       },
     ],
     githubLink: "https://github.com/nksidhu98/portfoliofrontend.git",
-    liveDemoLink: "https://pulseiq-liart.vercel.app/dashboard",
+    liveDemoLink: "https://devportfoliotemplate.vercel.app/",
     year: "2026",
     role: "Product UI, frontend ",
     impact: "Reduced decision latency across daily ops reviews",
