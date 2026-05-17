@@ -286,11 +286,15 @@ function DashboardPreview() {
 
 function ProjectsSection() {
   return (
-    <Section id="projects" eyebrow="Featured work" title="Dashboard products with enterprise polish.">
+    <Section
+      id="projects"
+      eyebrow="Featured work"
+      title="Dashboard products with enterprise polish."
+    >
       <div className="grid gap-6 lg:grid-cols-3">
         {projects.map((project, index) => (
           <motion.article
-            key={project.title}
+            key={project.slug}
             variants={fadeUp}
             initial="hidden"
             whileInView="visible"
@@ -299,14 +303,22 @@ function ProjectsSection() {
             className="group rounded-lg border border-border bg-white p-4 shadow-sm shadow-slate-900/5 transition duration-300 hover:-translate-y-1 hover:border-slate-300 hover:shadow-2xl hover:shadow-slate-900/10 dark:bg-card/78 dark:hover:border-border"
           >
             <ProjectVisual project={project} />
+
             <div className="mt-7">
-              <div className="text-sm font-medium text-muted-foreground">{project.label}</div>
-              <h3 className="mt-2 text-2xl font-semibold tracking-tight text-slate-950 dark:text-white">{project.name}</h3>
+              <div className="text-sm font-medium text-muted-foreground">
+                {project.subtitle}
+              </div>
+
+              <h3 className="mt-2 text-2xl font-semibold tracking-tight text-slate-950 dark:text-white">
+                {project.title}
+              </h3>
+
               <p className="mt-3 min-h-24 text-sm leading-7 text-muted-foreground">
-                {project.description}
+                {project.overview}
               </p>
+
               <div className="mt-5 flex flex-wrap gap-2">
-                {project.stack.map((item) => (
+                {project.techStack.map((item) => (
                   <span
                     key={item}
                     className="rounded-full border border-border bg-slate-50 px-3 py-1 text-xs text-slate-600 dark:bg-muted/60 dark:text-muted-foreground"
@@ -315,18 +327,35 @@ function ProjectsSection() {
                   </span>
                 ))}
               </div>
+
               <div className="mt-6 flex gap-3">
                 <Button asChild size="sm">
-                  <a href="#contact">
+                  <a
+                    href={project.liveDemoLink}
+                    target="_blank"
+                    rel="noreferrer"
+                  >
                     Live Demo
                     <ExternalLink className="h-3.5 w-3.5" />
                   </a>
                 </Button>
+
                 <Button asChild size="sm" variant="secondary">
-                  <a href="https://github.com" target="_blank" rel="noreferrer">
+                  <a
+                    href={project.githubLink}
+                    target="_blank"
+                    rel="noreferrer"
+                  >
                     GitHub
                     <GitBranch className="h-3.5 w-3.5" />
                   </a>
+                </Button>
+
+                <Button asChild size="sm" variant="ghost">
+                  <Link href={`/projects/${project.slug}`}>
+                    Case Study
+                    <ArrowRight className="h-3.5 w-3.5" />
+                  </Link>
                 </Button>
               </div>
             </div>
