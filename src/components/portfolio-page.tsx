@@ -290,7 +290,7 @@ function ProjectsSection() {
       <div className="grid gap-6 lg:grid-cols-3">
         {projects.map((project, index) => (
           <motion.article
-            key={project.name}
+            key={project.title}
             variants={fadeUp}
             initial="hidden"
             whileInView="visible"
