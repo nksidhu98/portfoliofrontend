@@ -48,7 +48,7 @@ export const projects: Project[] = [
         caption: "A high-signal executive view...",
         alt: "PulseIQ operations dashboard overview mock screenshot",
         image: "/projects/pulse-iq.png",
-      }   
+      },   
       {
         title: "Care queue",
         caption: "Prioritized worklists with risk tags and next-best actions.",
